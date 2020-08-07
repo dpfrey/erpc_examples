@@ -1,4 +1,0 @@
-interface HelloWorld
-{
-    hello_world() -> void
-}

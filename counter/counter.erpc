@@ -1,0 +1,9 @@
+interface Counter
+{
+    counter_set(int32 count) -> void
+    counter_get() -> int32
+    counter_increment() -> int32
+    counter_decrement() -> int32
+    counter_increment_by(int32 increment) -> int32
+    counter_decrement_by(int32 decrement) -> int32
+}

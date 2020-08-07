@@ -1,7 +1,7 @@
 #include "erpc_basic_codec.h"
 #include "erpc_simple_server.h"
 #include "erpc_tcp_transport.h"
-#include "hello_world_server.h"
+#include "counter_server.h"
 #include "DynamicMessageBufferFactory.h"
 #include <iostream>
 
@@ -11,9 +11,38 @@ erpc::Crc16 g_crc16;
 DynamicMessageBufferFactory g_messageBufferFactory;
 erpc::SimpleServer g_server;
 
-void hello_world(void)
+int32_t g_counter = 0;
+
+void counter_set(int32_t count)
 {
-    std::cout << "Hello World!" << std::endl;
+    g_counter = count;
+}
+
+int32_t counter_get(void)
+{
+    return g_counter;
+}
+
+int32_t counter_increment_by(int32_t increment)
+{
+    g_counter += increment;
+    return g_counter;
+}
+
+int32_t counter_decrement_by(int32_t decrement)
+{
+    g_counter -= decrement;
+    return g_counter;
+}
+
+int32_t counter_increment(void)
+{
+    return counter_increment_by(1);
+}
+
+int32_t counter_decrement(void)
+{
+    return counter_decrement_by(1);
 }
 
 int main(int argc, char **argv)
@@ -31,7 +60,7 @@ int main(int argc, char **argv)
     g_server.setTransport(&g_transport);
     g_server.setCodecFactory(&g_codecFactory);
 
-    g_server.addService(new HelloWorld_service());
+    g_server.addService(new Counter_service());
 
     g_server.run();
 
