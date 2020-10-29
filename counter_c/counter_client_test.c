@@ -1,4 +1,4 @@
-#include "erpc_setup_tcp_transport.h"
+#include "erpc_transport_setup.h"
 #include "erpc_client_setup.h"
 #include "erpc_mbf_setup.h"
 #include "counter.h"

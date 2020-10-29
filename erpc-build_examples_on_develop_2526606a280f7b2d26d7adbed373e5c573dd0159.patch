@@ -1,19 +1,31 @@
+From 61beb9998df88da9f079c484611fec28de86392d Mon Sep 17 00:00:00 2001
+From: David Frey <dfrey@sierrawireless.com>
+Date: Thu, 29 Oct 2020 10:10:07 -0700
+Subject: [PATCH] Makefile tweaks to make my examples compile
+
+---
+ erpc_c/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
 diff --git a/erpc_c/Makefile b/erpc_c/Makefile
-index 36b172a..5a530c5 100644
+index 9d67344..6d3fe12 100644
 --- a/erpc_c/Makefile
 +++ b/erpc_c/Makefile
-@@ -63,9 +63,9 @@ SOURCES += 	$(ERPC_C_ROOT)/infra/erpc_arbitrated_client_manager.cpp \
+@@ -64,12 +64,12 @@ SOURCES += 	$(ERPC_C_ROOT)/infra/erpc_arbitrated_client_manager.cpp \
  			$(ERPC_C_ROOT)/port/erpc_port_stdlib.cpp \
  			$(ERPC_C_ROOT)/port/erpc_threading_pthreads.cpp \
  			$(ERPC_C_ROOT)/port/erpc_serial.cpp \
 -			$(ERPC_C_ROOT)/setup/erpc_arbitrated_client_setup.cpp \
  			$(ERPC_C_ROOT)/setup/erpc_client_setup.cpp \
+ 			$(ERPC_C_ROOT)/setup/erpc_setup_mbf_dynamic.cpp \
+ 			$(ERPC_C_ROOT)/setup/erpc_setup_mbf_static.cpp \
  			$(ERPC_C_ROOT)/setup/erpc_server_setup.cpp \
-+			$(ERPC_C_ROOT)/setup/erpc_setup_mbf_dynamic.cpp \
  			$(ERPC_C_ROOT)/setup/erpc_setup_serial.cpp \
++			$(ERPC_C_ROOT)/setup/erpc_setup_tcp.cpp \
  			$(ERPC_C_ROOT)/transports/erpc_inter_thread_buffer_transport.cpp \
  			$(ERPC_C_ROOT)/transports/erpc_serial_transport.cpp \
-@@ -84,6 +84,7 @@ HEADERS += 	$(ERPC_C_ROOT)/config/erpc_config.h \
+ 			$(ERPC_C_ROOT)/transports/erpc_tcp_transport.cpp
+@@ -87,6 +87,7 @@ HEADERS += 	$(ERPC_C_ROOT)/config/erpc_config.h \
  			$(ERPC_C_ROOT)/infra/erpc_message_buffer.h \
  			$(ERPC_C_ROOT)/infra/erpc_message_loggers.h \
  			$(ERPC_C_ROOT)/infra/erpc_server.h \
@@ -21,13 +33,14 @@ index 36b172a..5a530c5 100644
  			$(ERPC_C_ROOT)/infra/erpc_static_queue.h \
  			$(ERPC_C_ROOT)/infra/erpc_transport_arbitrator.h \
  			$(ERPC_C_ROOT)/infra/erpc_transport.h \
-@@ -91,8 +92,8 @@ HEADERS += 	$(ERPC_C_ROOT)/config/erpc_config.h \
+@@ -97,7 +98,6 @@ HEADERS += 	$(ERPC_C_ROOT)/config/erpc_config.h \
  			$(ERPC_C_ROOT)/port/erpc_port.h \
  			$(ERPC_C_ROOT)/port/erpc_threading.h \
  			$(ERPC_C_ROOT)/port/erpc_serial.h \
 -			$(ERPC_C_ROOT)/setup/erpc_arbitrated_client_setup.h \
  			$(ERPC_C_ROOT)/setup/erpc_client_setup.h \
-+			$(ERPC_C_ROOT)/setup/erpc_mbf_setup.h \
+ 			$(ERPC_C_ROOT)/setup/erpc_mbf_setup.h \
  			$(ERPC_C_ROOT)/setup/erpc_server_setup.h \
- 			$(ERPC_C_ROOT)/setup/erpc_transport_setup.h \
- 			$(ERPC_C_ROOT)/transports/erpc_inter_thread_buffer_transport.h \
+-- 
+2.29.0
+
