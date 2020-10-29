@@ -1,0 +1,19 @@
+type void_star = uint64
+type TimerHandle_t = uint64
+
+oneway TimerHandler_t(TimerHandle_t handle, void_star context)
+
+@group("main")
+interface Timer
+{
+    @include("../timer_handlers.h")
+    timer_register(uint16 period_ms, TimerHandler_t handler, void_star context) -> TimerHandle_t
+    @nested timer_deregister(TimerHandle_t handle) -> void
+}
+
+@group("cb")
+interface TimerCb
+{
+    TimerHandler_t timer_handler_a;
+    TimerHandler_t timer_handler_b;
+}

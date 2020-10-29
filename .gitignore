@@ -1,1 +1,5 @@
 */*.o
+*/gen/
+timer/timer_client_test
+timer/timer_server_test
+
