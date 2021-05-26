@@ -1,0 +1,4 @@
+interface Two
+{
+    g() -> void
+}

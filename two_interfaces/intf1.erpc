@@ -1,0 +1,4 @@
+interface One
+{
+    f() -> void
+}
